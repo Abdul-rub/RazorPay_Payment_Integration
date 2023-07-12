@@ -9,7 +9,7 @@ const PaymentHistory = () => {
   useEffect(() => {
     const fetchPaymentHistory = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/paymenthistory");
+        const response = await axios.get("https://razorpay-integration.onrender.com/api/paymenthistory");
         const { success, paymentHistory } = response.data;
         if (success) {
           setPaymentHistory(paymentHistory);
