@@ -7,13 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+node_modules/
+dist/
+dist-ssr/
 *.local
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-
+# Environment variables
 .env
+
+# Ignore config file with sensitive data
+/config/config.env
