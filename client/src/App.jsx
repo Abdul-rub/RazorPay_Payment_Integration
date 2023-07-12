@@ -17,7 +17,7 @@ function App() {
       <Nav/>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/paymentsuccessfull" element={<PaymentSuccess/>}/>
+      <Route path="/paymentsuccessful" element={<PaymentSuccess/>}/>
       <Route path='/paymentfailed' element={<PaymentFailed/>}/>
       <Route path='/paymenthistory' element={<PaymentHistory/>}/> 
     </Routes>
