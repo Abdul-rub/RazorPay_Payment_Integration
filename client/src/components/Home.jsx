@@ -37,6 +37,10 @@ const Home = () => {
       }
   };
   const razor = new window.Razorpay(options);
+  razor.on("payment.failed", function (response) {
+    console.log(response.error);
+ 
+  });
   razor.open();
 }
 
@@ -45,12 +49,14 @@ const Home = () => {
       
 
   return (
+    <>
     <Box>
       <Stack h={"100vh"} alignItems="center" justifyContent="center" direction={["column", "row"]}>
-        <Card amount={5000} img={"https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"} handleCheckout={handleCheckout} />
-        <Card amount={3000} img={"https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"} handleCheckout={handleCheckout} />
+        <Card amount={1} img={"https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"} handleCheckout={handleCheckout} />
+        <Card amount={2} img={"https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"} handleCheckout={handleCheckout} />
       </Stack>
     </Box>
+    </>
   );
 };
 
