@@ -48,12 +48,12 @@ export const VerifyPayment = async (req, res) => {
         razorpay_order_id,
         razorpay_payment_id,
         razorpay_signature,
-        status: "success", // Set the status to "success"
+        status: "success", 
       });
-      res.redirect(`http://localhost:5173/paymentsuccessfull?reference=${razorpay_payment_id}`);
+      res.redirect(`https://razorpay-integration.onrender.com/paymentsuccessful?reference=${razorpay_payment_id}`);
     } catch (error) {
       console.error(error);
-      res.redirect(`http://localhost:5173/paymentfailed?reference=${razorpay_order_id}`);
+      res.redirect(`https://razorpay-integration.onrender.com/paymentfailed?reference=${razorpay_order_id}`);
     }
   } else {
     try {
@@ -62,9 +62,9 @@ export const VerifyPayment = async (req, res) => {
         razorpay_order_id,
         razorpay_payment_id,
         razorpay_signature,
-        status: "failed", // Set the status to "failed"
+        status: "failed", 
       });
-      res.redirect(`http://localhost:5173/paymentfailed?reference=${razorpay_order_id}`);
+      res.redirect(`https://razorpay-integration.onrender.com/paymentfailed?reference=${razorpay_order_id}`);
     } catch (error) {
       console.error(error);
       res.status(500).json({
@@ -86,3 +86,8 @@ export const getPaymentHistory = async (req, res) => {
     res.status(500).json({ success: false, error: "Failed to fetch payment history." });
   }
 };
+
+//PaymentSuccessfull
+export const getPaymentSuccessfull = async(req,res)=>{
+  res.send('Payment Successfull')
+}
